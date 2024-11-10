@@ -8,10 +8,7 @@ public class Grades {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-
-          int  n = validateStudentCount(sc);
-
+        int n = validateStudentCount(sc);
         String grade = null;
         double[] scores = new double[(int) NUMSUB];
 
@@ -66,7 +63,8 @@ public class Grades {
             }
         }
     }
-//method for validating score
+
+    //method for validating score
     public static double validateScore(Scanner sc, String subject) {
         double score = -1;
         boolean flag = false;
@@ -87,6 +85,7 @@ public class Grades {
         }
         return score;
     }
+
     public static int validateStudentCount(Scanner sc) {
         int count = -1;
         boolean valid = false;
