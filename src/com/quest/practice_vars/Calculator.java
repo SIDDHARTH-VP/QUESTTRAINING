@@ -43,6 +43,7 @@ public class Calculator {
              a = sc.nextDouble();
         } catch (Exception e) {
             System.out.println("Enter valid number");
+            return;
         }
         Calculator cal = new Calculator();
 
