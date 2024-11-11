@@ -5,25 +5,25 @@ import java.util.Scanner;
 public class SalaryManagement {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        boolean flag = false;  // Initialize flag to false
+        boolean flag = false;
         int numOfEmp = 0;
 
-        while (!flag) {  // Change to while (!flag)
+        while (!flag) {
             try {
                 System.out.println("Enter the number of employees:");
                 numOfEmp = sc.nextInt();
                 if (numOfEmp > 0) {
-                    flag = true;  // Set to true when input is valid
+                    flag = true;
                 } else {
                     System.out.println("Enter a positive number.");
                 }
             } catch (Exception e) {
                 System.out.println("Enter a valid number.");
-                sc.nextLine();  // Clear the scanner buffer
+                sc.nextLine();
             }
         }
 
-        sc.nextLine();  // Clear newline character after reading integer
+        sc.nextLine();
 
         String[] names = new String[numOfEmp];
         double[] baseSalaries = new double[numOfEmp];
