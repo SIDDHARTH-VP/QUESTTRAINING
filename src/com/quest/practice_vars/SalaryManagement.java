@@ -27,14 +27,14 @@ public class SalaryManagement {
 
         sc.nextLine();
 
-        // Variables
+        // Variables i declaration
         String[] names = new String[numOfEmp];
         double[] baseSalaries = new double[numOfEmp];
         double[][] monthlySalaries = new double[numOfEmp][12];
         double[] totalSalaries = new double[numOfEmp];
         double[] avgSalaries = new double[numOfEmp];
 
-        // Looping based on the number of employees
+        // Looping based on the number of employees and getting input from user
         for (int i = 0; i < numOfEmp; i++) {
             System.out.println("\nEnter the name of Employee " + (i + 1) + ":");
             names[i] = sc.nextLine();
