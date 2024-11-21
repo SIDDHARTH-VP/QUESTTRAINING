@@ -63,7 +63,7 @@ public class Main {
             }
         }
     }
-
+//method to add city
     private static void addCityData(Weatherabs system, Scanner scanner) {
         System.out.print("Enter city name: ");
         String name = scanner.nextLine();

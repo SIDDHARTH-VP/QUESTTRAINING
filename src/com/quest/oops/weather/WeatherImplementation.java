@@ -1,19 +1,19 @@
 package com.quest.oops.weather;
 
-public class WeatherImplementation extends Weatherabs{
+public class WeatherImplementation implements Weatherabs{
 
-    private City[] cities;
+    private City[] citiesarray;
     private int cityCount;
 
     public WeatherImplementation(int capacity) {
-        this.cities = new City[capacity];
+        this.citiesarray = new City[capacity];
         this.cityCount = 0;
     }
 
     @Override
     public void addCityWeather(String name, double temperature, int humidity, String condition) {
-        if(cityCount < cities.length) {
-            cities[cityCount] = new City(name, temperature, humidity, condition);
+        if(cityCount < citiesarray.length) {
+            citiesarray[cityCount] = new City(name, temperature, humidity, condition);
             cityCount++;
             System.out.println("City added"+name);
         }else{
@@ -26,15 +26,15 @@ public class WeatherImplementation extends Weatherabs{
     public void displayAllCities() {
         System.out.println("Displaying All Cities:");
         for (int i = 0; i < cityCount; i++) {
-            System.out.println(cities[i]);
+            System.out.println(citiesarray[i]);
         }
     }
 
     @Override
     public void displayCity(String name) {
         for (int i = 0; i < cityCount; i++) {
-            if (cities[i].getName().equalsIgnoreCase(name)) {
-                System.out.println(cities[i]);
+            if (citiesarray[i].getName().equalsIgnoreCase(name)) {
+                System.out.println(citiesarray[i]);
                 return;
             }
         }
@@ -47,14 +47,14 @@ public class WeatherImplementation extends Weatherabs{
             System.out.println("No data available.");
             return;
         }
-        City highest = cities[0];
-        City lowest = cities[0];
+        City highest = citiesarray[0];
+        City lowest = citiesarray[0];
         for (int i = 1; i < cityCount; i++) {
-                if (cities[i].getTemperature() > highest.getTemperature()) {
-                    highest = cities[i];
+                if (citiesarray[i].getTemperature() > highest.getTemperature()) {
+                    highest = citiesarray[i];
                 }
-                if (cities[i].getTemperature() < lowest.getTemperature()) {
-                    lowest = cities[i];
+                if (citiesarray[i].getTemperature() < lowest.getTemperature()) {
+                    lowest = citiesarray[i];
                 }
             }
 
@@ -68,8 +68,8 @@ public class WeatherImplementation extends Weatherabs{
         System.out.println("Cities with Humidity > 80%:");
         boolean found = false;
         for (int i = 0; i < cityCount; i++) {
-            if (cities[i].getHumidity() > 80) {
-                System.out.println(cities[i]);
+            if (citiesarray[i].getHumidity() > 80) {
+                System.out.println(citiesarray[i]);
                 found = true;
             }
         }
@@ -86,8 +86,8 @@ public class WeatherImplementation extends Weatherabs{
             System.out.println(condion);
             boolean found = false;
             for (int i = 0; i < cityCount; i++) {
-                if (cities[i].getCondition().equalsIgnoreCase(condion)) {
-                    System.out.println(cities[i].getName());
+                if (citiesarray[i].getCondition().equalsIgnoreCase(condion)) {
+                    System.out.println(citiesarray[i].getName());
                     found = true;
                 }
             }
@@ -106,7 +106,7 @@ public class WeatherImplementation extends Weatherabs{
         double totalTemperature = 0;
         double avgtemp=0;
         for (int i = 0; i < cityCount; i++) {
-            totalTemperature += cities[i].getTemperature();
+            totalTemperature += citiesarray[i].getTemperature();
         }
         avgtemp=totalTemperature/(cityCount);
         System.out.println("Average Temperature: "+avgtemp );
@@ -117,11 +117,11 @@ public class WeatherImplementation extends Weatherabs{
     public void displayAlerts() {
         System.out.println("Alerts:");
         for (int i = 0; i < cityCount; i++) {
-            if (cities[i].getTemperature() > 40) {
-                System.out.println("Heatwave Alert: " + cities[i].getName() + " is experiencing extreme heat (" + cities[i].getTemperature() + "°C)!");
+            if (citiesarray[i].getTemperature() > 40) {
+                System.out.println("Heatwave Alert: " + citiesarray[i].getName() + " is experiencing extreme heat " + citiesarray[i].getTemperature() + "°C");
             }
-            else if (cities[i].getHumidity() < 20) {
-                System.out.println("Low Humidity Warning: " + cities[i].getName() + " has very low humidity (" + cities[i].getHumidity());
+            else if (citiesarray[i].getHumidity() < 20) {
+                System.out.println("Low Humidity Warning: " + citiesarray[i].getName() + " has very low humidity " + citiesarray[i].getHumidity());
             }
         }
     }

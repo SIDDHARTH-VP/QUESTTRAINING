@@ -1,12 +1,12 @@
 package com.quest.oops.weather;
 
-public abstract class Weatherabs {
-    public abstract void addCityWeather(String name, double temperature, int humidity, String condition);
-    public abstract void displayAllCities();
-    public abstract void displayCity(String name);
-    public abstract void findExtremes();
-    public abstract void displayHighHumidityCities();
-    public abstract void displayCitiesByCondition();
-    public abstract void calculateAverageTemperature();
-    public abstract void displayAlerts();
+public interface Weatherabs {
+     void addCityWeather(String name, double temperature, int humidity, String condition);
+     void displayAllCities();
+     void displayCity(String name);
+     void findExtremes();
+     void displayHighHumidityCities();
+     void displayCitiesByCondition();
+     void calculateAverageTemperature();
+     void displayAlerts();
 }

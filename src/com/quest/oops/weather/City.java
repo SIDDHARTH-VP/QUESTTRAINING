@@ -11,7 +11,7 @@ public class City {
         this.humidity = humidity;
         this.condition = condition;
     }
-
+//all the getter and setter methods
     public String getName() {
         return name;
     }
