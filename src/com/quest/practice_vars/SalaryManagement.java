@@ -10,20 +10,10 @@ public class SalaryManagement {
         int numOfEmp = 0;
 
         // Validation for the number of employees
-        while (!flag) {
-            try {
+
                 System.out.println("Enter the number of employees:");
-                numOfEmp = sc.nextInt();
-                if (numOfEmp > 0) {
-                    flag = true;
-                } else {
-                    System.out.println("Enter a positive number.");
-                }
-            } catch (Exception e) {
-                System.out.println("Enter a valid number.");
-                sc.nextLine();
-            }
-        }
+                numOfEmp = numValid(sc);
+
 
         sc.nextLine();
 
@@ -85,6 +75,25 @@ public class SalaryManagement {
         System.out.println("Total Salary for the Year: " + totalSalary);
         System.out.println("Average Monthly Salary: " + avgSalary);
         System.out.println("Bonus: " + calculateBonus(baseSalary));
+    }
+    public static int numValid(Scanner sc) {
+        boolean flag = false;
+        int a=0;
+        while (!flag) {
+            try {
+                a=sc.nextInt();
+                if (a>0) {
+                    flag = true;
+                }
+                else {
+                    System.out.println("\nEnter valid number");
+                }
+            } catch (Exception e) {
+                System.out.println("Enter a valid number.");
+                sc.nextLine();
+            }
+        }
+        return a;
     }
 }
 

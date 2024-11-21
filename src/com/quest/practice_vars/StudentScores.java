@@ -41,7 +41,8 @@ public class StudentScores {
             }
 
             double average = count > 0 ? (double) sum / count : 0;
-            System.out.printf("Name: %s, Age: %d, Average Score: %.2f%n", names[i], ages[i], average);
+            String message=new String();
+            System.out.printf("Name: %s, Age: %d, Average Score: %f%n", names[i], ages[i], average);
         }
     }
 
