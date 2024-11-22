@@ -71,7 +71,7 @@ public class Main {
         double temperature = scanner.nextDouble();
         System.out.print("Enter humidity (%): ");
         int humidity = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine();
         System.out.print("Enter weather condition (Sunny, Rainy, etc.): ");
         String condition = scanner.nextLine();
         system.addCityWeather(name, temperature, humidity, condition);
