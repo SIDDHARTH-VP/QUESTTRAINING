@@ -7,7 +7,7 @@ public class User {
     private String username;
     private Map<String,Playlist> playlists;
 
-    public User(String username, Map<String,Playlist> playlists) {
+    public User(String username) {
         this.username = username;
         this.playlists = new HashMap<>();
     }
@@ -27,6 +27,30 @@ public class User {
     public void setPlaylists(Map<String, Playlist> playlists) {
         this.playlists = playlists;
     }
+
+    public void addPlaylist(String playlistName) {
+        if (playlists.containsKey(playlistName)) {
+            System.out.println("Playlist with name '" + playlistName + "' already exists.");
+            return;
+        }
+        playlists.put(playlistName, new Playlist(playlistName, null));
+        System.out.println("Playlist '" + playlistName + "' created successfully.");
+    }
+
+    public void removePlaylist(String playlistName) {
+        if (playlists.containsKey(playlistName)) {
+            playlists.remove(playlistName);
+            System.out.println("Playlist '" + playlistName + "' removed successfully.");
+        } else {
+            System.out.println("Playlist '" + playlistName + "' does not exist.");
+        }
+    }
+
+    public Playlist getPlaylistByName(String playlistName) {
+        return playlists.get(playlistName);
+    }
+
+
 
     @Override
     public String toString() {

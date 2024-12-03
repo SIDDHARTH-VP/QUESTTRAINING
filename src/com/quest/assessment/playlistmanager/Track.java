@@ -19,32 +19,16 @@ public class Track {
         return track_id;
     }
 
-    public void setTrack_id(String track_id) {
-        this.track_id = track_id;
-    }
-
     public String getTrack_name() {
         return track_name;
-    }
-
-    public void setTrack_name(String track_name) {
-        this.track_name = track_name;
     }
 
     public String getArtist() {
         return artist;
     }
 
-    public void setArtist(String artist) {
-        this.artist = artist;
-    }
-
     public double getDuration() {
         return duration;
-    }
-
-    public void setDuration(double duration) {
-        this.duration = duration;
     }
 
     @Override

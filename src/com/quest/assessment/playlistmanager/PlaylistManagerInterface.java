@@ -3,6 +3,7 @@ package com.quest.assessment.playlistmanager;
 import java.util.List;
 
 public interface PlaylistManagerInterface {
+
     void addTrackToPlaylist(Playlist playlist, Track track) throws DuplicateTrackException;
     void removeTrackFromPlaylist(Playlist playlist,String trackId) throws NoSuchElementException;
     List<Track> searchTrack(Playlist playlist,String search);

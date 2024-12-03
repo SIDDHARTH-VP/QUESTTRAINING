@@ -7,7 +7,7 @@ public class Playlist {
     private String playlistName;
     private List<Track> tracks;
 
-    public Playlist(String playlistName) {
+    public Playlist(String playlistName, Object o) {
         this.playlistName = playlistName;
         this.tracks = new ArrayList<>();
     }

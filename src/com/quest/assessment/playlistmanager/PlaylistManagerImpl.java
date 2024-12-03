@@ -4,10 +4,14 @@ import java.util.*;
 
 public class PlaylistManagerImpl implements PlaylistManagerInterface{
 
-    private Map<String,Playlist> playlists;
+//    private Map<String,Playlist> playlists;
+//    public PlaylistManagerImpl(){
+//        playlists = new HashMap<>();
+//    }
 
-    public PlaylistManagerImpl(){
-        playlists = new HashMap<>();
+    private User user;
+    public PlaylistManagerImpl(User user) {
+        this.user = user;
     }
 
     @Override
@@ -49,6 +53,10 @@ public class PlaylistManagerImpl implements PlaylistManagerInterface{
         return results;
     }
 
+    public Playlist getPlaylist(String playlistName){
+        return user.getPlaylistByName(playlistName);
+    }
+
     @Override
     public void sortByDuration(Playlist playlist) {
         playlist.getTracks().sort(new TrackDurationComparator());
@@ -75,28 +83,14 @@ public class PlaylistManagerImpl implements PlaylistManagerInterface{
     //users meth
     @Override
     public void createPlaylist(String playlistName) {
-        if(!playlists.containsKey(playlistName)){
-            playlists.put(playlistName, new Playlist(playlistName));
-            System.out.println("Playlist"+playlistName +"created");
-        }else{
-            System.out.println("Playlist"+playlistName +"already exists");
-        }
+        user.addPlaylist(playlistName);
     }
 
     @Override
     public void deletePlaylist(String playlistName) {
-    if(playlists.containsKey(playlistName)){
-        playlists.remove(playlistName);
-        System.out.println("Playlist"+playlistName +"deleted");
-    }else{
-        System.out.println("Playlist"+playlistName +"does not exist");
-    }
+        user.removePlaylist(playlistName);
     }
 
-    @Override
-    public Playlist getPlaylist(String playlistName) {
-        return playlists.get(playlistName);
-    }
 
     @Override
     public void mergePlaylists(String playlist1, String playlist2, String newPlaylistName) {
