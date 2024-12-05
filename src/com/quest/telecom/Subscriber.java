@@ -8,11 +8,12 @@ public class Subscriber  implements Serializable{
     private long number;
     private String planType;
     private double balance;
+
     public Subscriber(String subscriberId, String subscriberName, long number, String planType, int balance) {
         this.subscriberId = subscriberId;
         this.subscriberName = subscriberName;
         this.number = number;
-        this.planType = planType;
+        this.planType=planType;
         this.balance = balance;
     }
 

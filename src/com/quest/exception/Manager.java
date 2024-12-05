@@ -1,7 +1,7 @@
 package com.quest.exception;
 
 public class Manager extends Employee{
-    int teamSize;
+    protected int teamSize;
     public Manager(String name, int age, double salary, int teamSize) throws ChekExcep {
 
         super(name, age, salary);
@@ -15,9 +15,9 @@ public class Manager extends Employee{
     public String toString() {
         return "Manager{" +
                 "teamSize=" + teamSize +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", salary=" + salary +
+                ", name='" + getName() + '\'' +
+                ", age=" + getAge() +
+                ", salary=" + getSalary() +
                 '}';
     }
 }

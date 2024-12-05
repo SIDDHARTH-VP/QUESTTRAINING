@@ -8,7 +8,7 @@ public class FreqCountr {
         String input="Java is fun and java is powerful";
 
         input=input.toLowerCase();
-        String[] words = input.split("\\s+");
+        String[] words = input.split(" ");
 
         Map<String, Integer> wordCount = new HashMap<>();
         for (String word : words) {

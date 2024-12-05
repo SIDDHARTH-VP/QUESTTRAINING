@@ -8,7 +8,6 @@ public class EmpSearch {
     public static void main(String[] args) {
         Map<Integer, String> employeeMap = new HashMap<>();
 
-        // Add some employee data
         employeeMap.put(101, "Sid");
         employeeMap.put(102, "Jon");
         employeeMap.put(103, "Ram");

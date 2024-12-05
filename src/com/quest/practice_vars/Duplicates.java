@@ -4,24 +4,24 @@ import java.util.Arrays;
 public class Duplicates {
     public static void main(String[] args) {
 
-        int[] arr1 = {4,8,9,1,4};
-        int[] arr2=new int[10];
+        int[] array = {4,8,9,1,4,4,8,7};
+        int[] storingArray=new int[10];
         int count=0;
         for(int i=1;i<=10;i++){
             boolean flag=false;
-            for (int k : arr1) {
-                if (i == k) {
+            for (int currEle : array) {
+                if (i == currEle) {
                     flag = true;
                     break;
                 }
             }
             if(!flag){
-                arr2[count]=i;
+                storingArray[count]=i;
                 count++;
             }
         }
-        arr2=Arrays.copyOf(arr2,count);
-        System.out.println(Arrays.toString(arr2));
+        storingArray=Arrays.copyOf(storingArray,count);
+        System.out.println(Arrays.toString(storingArray));
 }
 
 }

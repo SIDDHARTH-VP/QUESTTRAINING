@@ -18,10 +18,11 @@ public class Product {
         String highestPricedProduct=null;
         Integer highestPrice=0;
 
-        for (Map.Entry<String, Integer> current : products.entrySet()) {
-            if (current.getValue() > highestPrice) {
-                highestPrice = current.getValue();
-                highestPricedProduct = current.getKey();
+        for (String key : products.keySet()) {
+            int price = products.get(key);
+            if (price > highestPrice) {
+                highestPrice = price;
+                highestPricedProduct = key;
             }
         }
 

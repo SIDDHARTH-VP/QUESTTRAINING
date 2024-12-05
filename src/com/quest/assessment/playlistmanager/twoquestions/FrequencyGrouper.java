@@ -5,7 +5,7 @@ import java.util.*;
 public class FrequencyGrouper {
 
     public static Map<Integer, List<Integer>> groupByFrequency(List<Integer> numbers) {
-        Map<Integer, Integer> frequencyMap = new HashMap<Integer, Integer>();//will be used to store each num and its freq
+        Map<Integer, Integer> frequencyMap = new HashMap<Integer, Integer>();
         for (Integer num : numbers) { //numbers is containing the list so iterate the list
             if (frequencyMap.containsKey(num)) {//cheching if curr num alredy exist in the map
                 frequencyMap.put(num, frequencyMap.get(num) + 1);//if found increment the freq by 1
